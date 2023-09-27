@@ -83,13 +83,13 @@ above = z >= predicted_points_on_scatter
 below = z < predicted_points_on_scatter
 
 # Plot points below first, then plot, then above, which will display in the correct order
-points_below = ax.scatter(scatter_x[below], scatter_y[below], z[below], s=32, edgecolor="black", c="red")
+points_below = ax.scatter(scatter_x[below], scatter_y[below], z[below], s=32, edgecolor="black", c="red", label="Original points (overestimate)")
 
 # Plotting the surface itself - added some alpha so we can see the points more easily
 surface = ax.plot_surface(X,Y,predictions,alpha=0.85, cmap=cmap, label= "SVR-predicted surface", ccount=500,rcount=500)
 
 # Now finally the points above
-points_above = ax.scatter(scatter_x[above], scatter_y[above], z[above], s=32, edgecolor="black", c="cyan", label="Original points")
+points_above = ax.scatter(scatter_x[above], scatter_y[above], z[above], s=32, edgecolor="black", c="cyan", label="Original points (underestimate)")
 
 
 plt.legend()   
