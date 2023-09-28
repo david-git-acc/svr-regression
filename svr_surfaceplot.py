@@ -33,7 +33,7 @@ x = np.linspace(0,100,res)
 y = np.linspace(0,100,res)
 X,Y = np.meshgrid(x,y)
 
-# It's prediction time (grabs crystall ball)
+# It's prediction time (grabs crystal ball)
 predictor = lambda x,y : model.predict(np.array([[x,y]])) 
 
 # Need to format our points in this way so that we can apply the prediction model to them, otherwise numpy will get confused
