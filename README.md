@@ -51,3 +51,16 @@ This program takes the processed frames from the above program and makes the GIF
 The original data can be found from this link:
 https://www.kaggle.com/datasets/samiatisha/world-university-rankings-2023-clean-dataset 
 
+# errorchecking
+I included this part as a second miniproject addition to this one. I took the model and again varied it from 1 training sample to all 2341 samples, and then for each case recorded the
+mean error - in this case, both **mean absolute difference** (the mean difference between the true values and the predicted values at those points) and the **root mean square difference** 
+(the mean of the squares of the differences, square-rooted) and recorded them onto a txt file (since doing this takes a long-ish time). 
+
+I then took the results from the txt file and plotted them onto 2 axes, one for each type of error, to analyse where the error is highest and lowest and what number of samples leads to these
+highs and lows, in order to determine the best possible number of training data samples. I also plotted quintic regression curves to approximate the error curves in each case.
+
+In the end the lowest error using a non-trivial number of datapoints was at n=2208 for both types of error, or about 94.3% of the dataset. As to why this is the case, I honestly have no evidenced idea - 
+perhaps something to do with how the dataframe was originally ordered, as I noticed in the animation that the data points seemed to be ordered in approximately descending order. 
+
+**svr_surferrorchecker.py** determines the errors at each n value, errorrec.txt records the errors, and **errorplotter.py** performs the plotting. All are commented and explained in the source code.
+
